@@ -36,13 +36,13 @@ The following image shows the web application's appearance and functionality:
 
 Github repository:
 
-https://github.com/mahdi83777/MahdisWorkDayScheduler
+https://github.com/mahdi83777/MahdisWeatherDashboard
 
 Deployed application:
 
-https://mahdi83777.github.io/MahdisWorkDayScheduler/
+https://mahdi83777.github.io/MahdisWeatherDashboard/
 
 ## References
 
 [Day.js] (https://day.js.org/docs/en/parse/string-format)
-[JS this] (https://www.w3schools.com/js/js_this.asp)
+[API] (https://openweathermap.org/forecast5)

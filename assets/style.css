@@ -4,19 +4,19 @@
   
   body {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
   }
   
   .forecast {
     font-size: 0.9em;
   }
   
-  .topnav {
+  .top {
       color: #cc7b7b;
       text-align: center;
-      font-size: 17px;
+      font-size: 18px;
       background-color: #5f3f3f;
-      padding: 14px 16px;
+      padding: 15px 18px;
   }
   
   .footer {

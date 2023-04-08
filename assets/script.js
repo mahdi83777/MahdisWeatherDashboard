@@ -5,7 +5,7 @@ var city = "";
 var citySearch = $("#city-search");
 var citySearchButton = $("#city-search-button");
 //my api key
-var key = "";
+var key = "ecebc4998111691a9fd4dea82b050c14";
 
 //Shows weather after clicking on button
 citySearchButton.on("click", displayW);
@@ -21,7 +21,7 @@ function displayW(event) {
     var cityList = document.getElementById("city-list");
     cityList.textContent = "";
 
-    var searchedhist = localStorage.getItem("visitedCities");
+    var searchedhist = localStorage.getItem("visited");
     if (searchedhist === null) {
         searchedhist = [];
     } else {
@@ -29,8 +29,8 @@ function displayW(event) {
     }
     searchedhist.push(city);
 
-    var visitedCityNames = JSON.stringify(searchedhist);
-    localStorage.setItem("visitedCities", visitedCityNames);
+    var visitedCity = JSON.stringify(searchedhist);
+    localStorage.setItem("visited", visitedCity);
 
     //creates list items from cities saved in localstorage
     for (let i = 0; i < searchedhist.length; i++) {
@@ -42,20 +42,20 @@ function displayW(event) {
     }
   }
 }
+
 //this function receives the data from the server side api using ajax and outputs the city name, temperature, humidity, wind
 function currentW(city) {
     var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + key + "&units=imperial";
-  
     $.ajax({
       url: queryUrl,
       method: "GET",
     }).then(function (response) {
       var weatherIcon = response.weather[0].icon;
       var icon = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
-      var city = document.getElementById("current-city");
+      var city = document.getElementById("current");
       city.innerHTML = (response.name + " " + "(" + time.format("MM/DD/YYYY") + ")" + '<img src="' + icon + '">');
   
-      var temp = document.getElementById("temperature");
+      var temp = document.getElementById("temp");
       temp.textContent = "Temperature: " + response.main.temp + " °F";
   
       var humidity = document.getElementById("humidity");
@@ -97,15 +97,15 @@ function currentW(city) {
         $("#forecast").empty();
   
         for (var i = 1; i < 6; i++) {
-          var forecastSection = document.getElementById("forecast");
+          var forecastSect = document.getElementById("forecast");
   
-          var unix_timestamp = response.daily[i].dt;
-          var date = new Date(unix_timestamp * 1000);
+          var unix_time = response.daily[i].dt;
+          var date = new Date(unix_time * 1000);
           var forecastDate = dayjs(date).format('MM/DD/YYYY');
   
           var div = document.createElement("div");
           div.setAttribute("class", "col-sm");
-          forecastSection.appendChild(div);
+          forecastSect.appendChild(div);
   
           var div2 = document.createElement("div");
           div2.setAttribute("class", "card card-body bg-primary border-dark");
@@ -135,7 +135,7 @@ function currentW(city) {
   };
   //Clears local storage and deletes search history
   function deleteItems() {
-    var searchedhist = localStorage.getItem("visitedCities");
+    var searchedhist = localStorage.getItem("visited");
     if (searchedhist === null) {
       searchedhist = [];
     } else {
