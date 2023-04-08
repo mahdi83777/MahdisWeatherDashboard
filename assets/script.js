@@ -98,7 +98,7 @@ function currentW(city) {
   
         for (var i = 1; i < 6; i++) {
           var forecastSect = document.getElementById("forecast");
-  
+          //get the unix timestamp and format date to show
           var unix_time = response.daily[i].dt;
           var date = new Date(unix_time * 1000);
           var forecastDate = dayjs(date).format('MM/DD/YYYY');
