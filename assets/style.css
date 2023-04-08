@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+  
+  .forecast {
+    font-size: 0.9em;
+  }
+  
+  .topnav {
+      color: #cc7b7b;
+      text-align: center;
+      font-size: 17px;
+      background-color: #5f3f3f;
+      padding: 14px 16px;
+  }
+  
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #a37474;
+    color: #000000;
+    text-align: center;
+  }
+  
+  .city-name {
+    font-weight: bold;
+    font-size: x-large;
+  }
+  
+  p.current,
+  .city-name {
+    color: #000000;
+  }
+  
+  p {
+    color: white;
+  }
+  
