@@ -5,7 +5,7 @@ var city = "";
 var citySearch = $("#city-search");
 var citySearchButton = $("#city-search-button");
 //my api key
-var key = "ee41023e27cbe7d2955c0ddebe7d0f31";
+var key = "3f8a6f9dfe234d4670bcba96dd05b6f0";
 
 //Shows weather after clicking on button
 citySearchButton.on("click", displayW);
@@ -50,6 +50,7 @@ function currentW(city) {
       url: queryUrl,
       method: "GET",
     }).then(function (response) {
+      console.log(response);
       var weatherIcon = response.weather[0].icon;
       var icon = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
       var city = document.getElementById("current");
@@ -90,7 +91,7 @@ function currentW(city) {
   
       //receives forecast data and converts it to 5 weather cards
       $.ajax({
-        url: "https://api.openweathermap.org/data/2.5/onecall?units=imperial&" + "lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly,alerts" + "&appid=" + key,
+        url: "https://api.openweathermap.org/data/3.0/onecall?units=imperial&" + "lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly,alerts" + "&appid=" + key,
         method: "GET",
       }).then(function (response) {
         //emptys current forecast before applying new
