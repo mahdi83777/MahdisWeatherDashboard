@@ -5,7 +5,7 @@ var city = "";
 var citySearch = $("#city-search");
 var citySearchButton = $("#city-search-button");
 //my api key
-var key = "ecebc4998111691a9fd4dea82b050c14";
+var key = "ee41023e27cbe7d2955c0ddebe7d0f31";
 
 //Shows weather after clicking on button
 citySearchButton.on("click", displayW);
@@ -95,6 +95,7 @@ function currentW(city) {
       }).then(function (response) {
         //emptys current forecast before applying new
         $("#forecast").empty();
+        console.log(response);
   
         for (var i = 1; i < 6; i++) {
           var forecastSect = document.getElementById("forecast");
