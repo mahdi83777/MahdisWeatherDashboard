@@ -135,6 +135,7 @@ function currentW(city) {
       })
     });
   };
+  
   //Clears local storage and deletes search history
   function deleteItems() {
     var searchedhist = localStorage.getItem("visited");
